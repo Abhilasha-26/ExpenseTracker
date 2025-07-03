@@ -43,9 +43,9 @@ function Expense() {
       name: expenses.name,
       amount: expenses.amount,
       createdAt: expenses.createdAt
-    }).from(budgets)
-      .rightJoin(expenses, eq(budgets.id, expenses.budgetId))
-      .where(eq(budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
+    }).from(expenses)//budgets
+      .rightJoin(budgets, eq(budgets.id, expenses.budgetId))
+      .where(eq(expenses.createdBy, user?.primaryEmailAddress?.emailAddress))
       .orderBy(desc(expenses.id));
 
     setExpensesList(result);
@@ -55,7 +55,7 @@ function Expense() {
     <div className='p-6 border'>
         <h2 className='font-bold text-lg'>All Expenses</h2>
       <ExpenseListTable
-        expensesList={expensesList}
+        expenseList={expensesList}
         refreshData={getBudgetList}
       />
     </div>

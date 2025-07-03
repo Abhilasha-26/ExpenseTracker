@@ -10,12 +10,13 @@ function Header() {
   const {user,isSignedIn}=useUser();
   return (
     <div className='p-5 flex justify-between item-center border shadow-md'>
-      <Image src={'/logo.png'}
-      alt='logo'
-      width={50}
-      height={90}
-
-      />
+      <Link href='/'>
+          <Image src={'/logo.png'}
+           alt='logo'
+           width={50}
+           height={90}
+          />
+      </Link>
       <div className='ml-15 mt-3'>
         <div className='flex justify-between gap-8 font-bold text-lg  ' >
           <a  className='hover:text-emerald-500' href="/dashboard">DASHBOARD</a><a className='hover:text-emerald-500' href="/about_us">ABOUT US</a><a className='hover:text-emerald-500' href="/contact">CONTACT US</a>

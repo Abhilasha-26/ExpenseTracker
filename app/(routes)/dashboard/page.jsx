@@ -45,8 +45,8 @@ function Dashboard() {
       amount:expenses.amount,
       createdAt:expenses.createdAt,
 
-    }).from(budgets)
-    .rightJoin(expenses,eq(budgets.id,expenses.budgetId))
+    }).from(expenses)
+    .rightJoin(budgets,eq(budgets.id,expenses.budgetId))
     .where(eq(expenses.createdBy,user?.primaryEmailAddress.emailAddress))
     .orderBy(desc(expenses.id));
     setExpensesList(result);
@@ -61,7 +61,7 @@ function Dashboard() {
         <div className='md:col-span-2'>
           <BarChartDashBoard budgetList={budgetList}/>
 
-          <ExpenseListTable expensesList={expensesList}
+          <ExpenseListTable expenseList={expensesList}
           refreshData={getBudgetList}/>
           
         </div>

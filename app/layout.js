@@ -10,6 +10,7 @@ import {
 } from '@clerk/nextjs'
 import { Toaster } from '../@/components/ui/sonner';
 import { Poppins, Nunito } from "next/font/google";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 const poppins = Poppins({
   variable: "--font-poppins",

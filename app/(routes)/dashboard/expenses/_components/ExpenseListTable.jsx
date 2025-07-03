@@ -29,7 +29,7 @@ function ExpenseListTable({ expenseList, refreshData }) {
 
       {expenseList?.length > 0 ? (
         expenseList.map((expense, index) => (
-          <div key={index} className='grid grid-cols-4 bg-green-100 p-2 rounded-md mt-2'>
+          <div key={expense.id} className='grid grid-cols-4 bg-green-100 p-2 rounded-md mt-2'>
             <h2>{expense.name}</h2>
             <h2>₹{expense.amount}</h2>
             <h2>{new Date(expense.createdAt).toLocaleDateString('en-GB')}</h2>
